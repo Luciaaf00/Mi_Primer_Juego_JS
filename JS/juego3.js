@@ -11,11 +11,11 @@ let tiempo = 180;
 let tiempoInicial=180;
 let tiempoAtras=null;
 
-//Sonidos
+
+//Música
 let aciertoAudio =new Audio('./sounds/ganar.wav');
 let normalAudio =new Audio('./sounds/normal.wav');
 let perderAudio =new Audio('./sounds/perder.wav');
-
 
 
 //Apuntando a documento HTML
@@ -42,7 +42,7 @@ function contarTiempo(){
 function bloquearTarjetas(){
     for (let i=0;i<=29;i++){
         let tarjetaBloqueada = document.getElementById(i);
-        tarjetaBloqueada.innerHTML=`<img src="./images/fotos_juego1/${numeros[i]}.png" alt="emoji de cerditos">`;
+        tarjetaBloqueada.innerHTML=`<img src="./images/fotos_juego3/${numeros[i]}.png" alt="emoji de vida">`;
         tarjetaBloqueada.disabled=true;
     }
 }
@@ -62,7 +62,7 @@ function destapar(id) {
         //Mostrar el primer número
         tarjeta1 = document.getElementById(id);
         primerResultado=numeros[id];
-        tarjeta1.innerHTML= `<img src="./images/fotos_juego1/${primerResultado}.png" alt="emoji de cerditos">`;
+        tarjeta1.innerHTML= `<img src="./images/fotos_juego3/${primerResultado}.png" alt="emoji de vida">`;
         normalAudio.play();
         //Desahilitar primer boton
         tarjeta1.disabled=true;
@@ -71,7 +71,7 @@ function destapar(id) {
         //Mostrar segundo número
         tarjeta2=document.getElementById(id);
         segundoResultado=numeros[id];
-        tarjeta2.innerHTML=`<img src="./images/fotos_juego1/${segundoResultado}.png" alt="caras de cerditos">`;
+        tarjeta2.innerHTML=`<img src="./images/fotos_juego3/${segundoResultado}.png" alt="emoji de vida">`;
         //Desahilitamos segundo botón
         tarjeta2.disabled=true;
         //Incrementamos movimientos
@@ -89,12 +89,10 @@ function destapar(id) {
             aciertoAudio.play();
             if(aciertos==15){
                 clearInterval(tiempoAtras);
-                mostrarAciertos.innerHTML= `Aciertos: ${aciertos} `;
+                mostrarAciertos.innerHTML= `Aciertos: ${aciertos} <3`;
                 mostrarTiempo.innerHTML=`Enhorabuena!! Acertaste en ${tiempoInicial-tiempo} segundos`
-                mostrarMovimientos.innerHTML=`Movimientos: ${movimientos}`
-                
-            }   
-            
+                mostrarMovimientos.innerHTML=`Movimientos: ${movimientos} O.o`
+            }
         }else{
             perderAudio.play();
             //Mostrar temporalmente los valores y volver a taparlos
