@@ -55,7 +55,7 @@ function destapar(id) {
         //Mostrar el primer número
         tarjeta1 = document.getElementById(id);
         primerResultado=numeros[id];
-        tarjeta1.innerHTML= primerResultado;
+        tarjeta1.innerHTML= `<img src"//1.png" alt"caras de cerditos">`;
 
         //Desahilitar primer boton
         tarjeta1.disabled=true;

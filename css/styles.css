@@ -30,7 +30,7 @@ button:hover{
 }
 .section2{
     background-color:rgba(255,255,255,0.2);
-    border top right radius:8px;
+    border-top-right-radius:8px;
     border-bottom-right-radius:8px;
     width:250px;
     height:400px;
@@ -41,11 +41,14 @@ button:hover{
     height: 105px;
     border-radius: 8px;
     padding: 8px 20px;
-    box sizing: border-box;
+    box-sizing: border-box;
     background-color: rgba(255,255,255,0.4);
     color: white;
 }
 a{
     text-decoration: none;
+}
+img{
+    width: 80%;
 }
 
