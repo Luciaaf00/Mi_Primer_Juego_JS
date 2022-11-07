@@ -7,13 +7,13 @@ let segundoResultado=null;
 let movimientos=0;
 let aciertos=0;
 let temporalizador=false;
-let tiempo = 3;
-let tiempoInicial=3;
+let tiempo = 180;
+let tiempoInicial=180;
 let tiempoAtras=null;
 
-let aciertoAudio =new Audio('../sounds/ganar.wav');
-let normalAudio =new Audio('../sounds/normal.wav');
-let perderAudio =new Audio('../sounds/perder.wav');
+let aciertoAudio =new Audio('./sounds/ganar.wav');
+let normalAudio =new Audio('./sounds/normal.wav');
+let perderAudio =new Audio('./sounds/perder.wav');
 
 //Apuntando a documento HTML
 let mostrarMovimientos=document.getElementById('movimientos');
@@ -39,7 +39,7 @@ function contarTiempo(){
 function bloquearTarjetas(){
     for (let i=0;i<=29;i++){
         let tarjetaBloqueada = document.getElementById(i);
-        tarjetaBloqueada.innerHTML=`<img src="../images/fotos_juego1/${numeros[i]}.png" alt="emoji de cerditos">`;
+        tarjetaBloqueada.innerHTML=`<img src="./images/fotos_juego1/${numeros[i]}.png" alt="emoji de cerditos">`;
         tarjetaBloqueada.disabled=true;
     }
 }
@@ -59,7 +59,7 @@ function destapar(id) {
         //Mostrar el primer número
         tarjeta1 = document.getElementById(id);
         primerResultado=numeros[id];
-        tarjeta1.innerHTML= `<img src="../images/fotos_juego1/${primerResultado}.png" alt="emoji de cerditos">`;
+        tarjeta1.innerHTML= `<img src="./images/fotos_juego1/${primerResultado}.png" alt="emoji de cerditos">`;
         normalAudio.play();
         //Desahilitar primer boton
         tarjeta1.disabled=true;
@@ -68,7 +68,7 @@ function destapar(id) {
         //Mostrar segundo número
         tarjeta2=document.getElementById(id);
         segundoResultado=numeros[id];
-        tarjeta2.innerHTML=`<img src"../images/fotos_juego1/${segundoResultado}.png" alt"caras de cerditos">`;
+        tarjeta2.innerHTML=`<img src="./images/fotos_juego1/${segundoResultado}.png" alt="caras de cerditos">`;
         //Desahilitamos segundo botón
         tarjeta2.disabled=true;
         //Incrementamos movimientos
